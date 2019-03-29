@@ -1,0 +1,37 @@
+*******************************************************************************
+Model Path Description:
+computer_vision
+   |-- classification
+       |-- {scene_name}
+            |--{scene_name}.om
+            |--model_desc.txt
+   |-- object_detect
+   |-- segmentation
+
+Scene Name: Om file Name and upper directory name should be scenes to be used.
+*******************************************************************************
+
+Original Network Link:
+https://github.com/sthanhng/yoloface/blob/master/cfg/yolov3-face.cfg
+yolov3 model is based on darknet, to convert to om file ,you need convert it to caffe model fist.
+the tools link : https://github.com/marvis/pytorch-caffe-darknet-convert
+
+Pre-trained Model Link:
+https://drive.google.com/file/d/1xYasjU52whXMLT5MtF7RCPQkV66993oR/view?usp=sharing
+
+Input Description:
+The input image should be resized to 416*416 pixels£¬ the format is BGR£¬
+and the range is 0~1;
+
+Output Description:
+//label link, etc.--- needed
+The model output is 3 feature maps, you need analysis the result by yourself;
+you can refer to https://github.com/Ascend/ascenddk/blob/ascendhuawei_develop/smartcity/videoanalysis/videoanalysisapp/face_detection/face_detection.cpp
+
+
+Custom Operator:
+Custom operator is included or not: yes
+
+
+Tested Version List:
+-Atlas 200
